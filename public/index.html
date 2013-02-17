@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menu App</title>
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="menu-app.js"></script>
+
+    <script type="text/template" id="items-list">
+      <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% $.each(items, function(i, item){ %>
+            <tr>
+              <td><%= item.id %></td>
+              <td><%= item.name %></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+    </script>
+
+    <script type="text/template" id="meals-list">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% $.each(meals, function(i, meal){ %>
+          <tr>
+            <td><%= meal.id %></td>
+            <td><%= meal.name %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </script>
+
+    <script type="text/template" id="menus-list">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>date (int)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% $.each(menus, function(i, menu){ %>
+          <tr>
+            <td><%= menu.id %></td>
+            <td><%= menu.date %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Menu App</h1>
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#/list/items">Items</a>
+        </li>
+        <li><a href="#/list/meals">Meals</a></li>
+        <li><a href="#/list/menus">Menus</a></li>
+      </ul>
+      <div id="content">
+      </div>
+    </div>
+  </body>
+</html>
